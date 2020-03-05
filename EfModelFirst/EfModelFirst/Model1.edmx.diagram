@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7431a320ce424b6baa4507285aa85608" Name="Diagram1" >
-        <EntityTypeShape EntityType="Model1.Person" Width="1.5" PointX="4.875" PointY="0.75" />
-        <EntityTypeShape EntityType="Model1.Kunde" Width="1.5" PointX="3.375" PointY="3.125" />
+      <Diagram DiagramId="7431a320ce424b6baa4507285aa85608" Name="Diagram1" ZoomLevel="74" >
+        <EntityTypeShape EntityType="Model1.Person" Width="1.5" PointX="4.875" PointY="0.75" FillColor="Fuchsia" />
+        <EntityTypeShape EntityType="Model1.Kunde" Width="1.5" PointX="3.375" PointY="3.125" FillColor="Aqua" />
         <InheritanceConnector EntityType="Model1.Kunde" />
-        <EntityTypeShape EntityType="Model1.Mitarbeiter" Width="1.5" PointX="6.625" PointY="3.125" />
+        <EntityTypeShape EntityType="Model1.Mitarbeiter" Width="1.5" PointX="6.625" PointY="3.125" FillColor="0, 192, 0" />
         <InheritanceConnector EntityType="Model1.Mitarbeiter" />
-        <EntityTypeShape EntityType="Model1.Abteilung" Width="1.5" PointX="9" PointY="1.125" />
+        <EntityTypeShape EntityType="Model1.Abteilung" Width="1.5" PointX="9" PointY="1.125" FillColor="Yellow" />
         <AssociationConnector Association="Model1.KundeMitarbeiter" />
         <AssociationConnector Association="Model1.MitarbeiterAbteilung" />
       </Diagram>

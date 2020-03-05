@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
 
 namespace EfModelFirst
 {
@@ -15,7 +16,38 @@ namespace EfModelFirst
         public Form1()
         {
             InitializeComponent();
+
+            dataGridView1.CellFormatting += DataGridView1_CellFormatting;
+            dataGridView1.DoubleClick += DataGridView1_DoubleClick;
         }
+
+        private void DataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow.DataBoundItem is Mitarbeiter m)
+            {
+                //context.Entry(m).State = EntityState.Added;
+                //context.PersonSet.Add(m);
+
+                //context.Entry(m).State = EntityState.Modified;
+
+                context.Entry(m).State = EntityState.Deleted;
+
+                //context.Entry(m).CurrentValues.SetValues(context.Entry(m).OriginalValues);
+
+                EntityState state = context.Entry(m).State;
+                MessageBox.Show($"({state}) {m.Name} [{string.Join(", ", m.Abteilung.Select(x => x.Bezeichnung))}]");
+            }
+
+        }
+
+        private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.Value is Kunde k)
+                e.Value = $"{k.Name}";
+            else if (e.Value is IEnumerable<Abteilung> abts)
+                e.Value = string.Join(", ", abts.Select(x => x.Bezeichnung));
+        }
+
         Model1Container context = new Model1Container();
         private void button1_Click(object sender, EventArgs e)
         {
@@ -44,7 +76,22 @@ namespace EfModelFirst
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = context.PersonSet.ToList();
+         //  dataGridView1.AutoGenerateColumns = false;
+         //
+         //  var col = new DataGridViewTextBoxColumn();
+         //  col.DataPropertyName = "Name";
+         //  dataGridView1.Columns.Add(col);
+
+
+            dataGridView1.DataSource = context.PersonSet.OfType<Mitarbeiter>()
+                                              //       .Include(x => x.Abteilung).Include(x => x.Kunde)
+                                              .Where(x => x.Name.StartsWith("F") && x.GebDatum.Month < 20)
+                                              .ToList();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            context.SaveChanges();
         }
     }
 }

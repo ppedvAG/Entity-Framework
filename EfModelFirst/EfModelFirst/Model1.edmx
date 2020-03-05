@@ -155,8 +155,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" />
-          <Property Name="GebDatum" Type="DateTime" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" ConcurrencyMode="Fixed" />
+          <Property Name="GebDatum" Type="DateTime" Nullable="false" ConcurrencyMode="None" />
         </EntityType>
         <EntityType Name="Kunde" BaseType="Model1.Person" >
           <Property Name="KdNummer" Type="String" Nullable="false" />
