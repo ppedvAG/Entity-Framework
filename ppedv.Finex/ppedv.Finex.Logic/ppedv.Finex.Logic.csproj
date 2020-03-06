@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ppedv.Finex.Data.EF\ppedv.Finex.Data.EF.csproj" />
+    <ProjectReference Include="..\ppedv.Finex.Model\ppedv.Finex.Model.csproj" />
+  </ItemGroup>
+
+</Project>
