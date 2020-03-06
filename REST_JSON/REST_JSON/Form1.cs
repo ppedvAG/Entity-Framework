@@ -35,6 +35,7 @@ namespace REST_JSON
             dataGridView1.DataSource = result.items.Select(x => x.volumeInfo).ToList();
 
         }
+
         BookResult result;
         private void button2_Click(object sender, EventArgs e)
         {
