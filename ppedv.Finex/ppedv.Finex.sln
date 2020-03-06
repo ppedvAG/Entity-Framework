@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Finex.Logic", "ppedv.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Finex.UI.CoreConsole", "ppedv.Finex.UI.CoreConsole\ppedv.Finex.UI.CoreConsole.csproj", "{7462E3F8-8E74-4CB2-99B8-6995E3D7C638}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Finex.Logic.Tests", "ppedv.Finex.Logic.Tests\ppedv.Finex.Logic.Tests.csproj", "{BC01BACA-BCC1-4F4E-A0CF-C7A4FC466016}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{7462E3F8-8E74-4CB2-99B8-6995E3D7C638}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7462E3F8-8E74-4CB2-99B8-6995E3D7C638}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7462E3F8-8E74-4CB2-99B8-6995E3D7C638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC01BACA-BCC1-4F4E-A0CF-C7A4FC466016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC01BACA-BCC1-4F4E-A0CF-C7A4FC466016}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC01BACA-BCC1-4F4E-A0CF-C7A4FC466016}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC01BACA-BCC1-4F4E-A0CF-C7A4FC466016}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
